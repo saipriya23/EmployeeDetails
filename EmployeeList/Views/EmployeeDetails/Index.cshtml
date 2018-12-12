@@ -1,0 +1,47 @@
+﻿@model List<EmployeeList.Models.EmployeeForm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    EmployeeName
+                </th>
+                <th>
+                    EmployeeType
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeType)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="ChangeEmpType">Change Employment Type</a>
+    
+</body>
+</html>
